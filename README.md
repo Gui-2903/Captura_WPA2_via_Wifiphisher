@@ -35,6 +35,7 @@ Componente	Especificação	Função
 Notebook com Kali Linux	Kali + Placa USB Wi-Fi (modo monitor)	Atacante — cria AP falso e coleta tráfego
 Wifiphisher	Versão 1.4 GIT	Ferramenta para criar Rogue AP + phishing de WPA
 Dispositivo Vítima	Smartphone Android	Conecta ao AP falso e envia credenciais
+
 ⚙️ 3. Metodologia
 3.1 Preparação da Interface (Modo Monitor)
 
@@ -43,7 +44,6 @@ Para permitir a criação do Rogue AP, a interface wireless foi configurada em m
 sudo ifconfig wlan0 down
 sudo iwconfig wlan0 mode monitor
 sudo ifconfig wlan0 up
-
 3.2 Execução do Wifiphisher
 
 O ataque foi iniciado com:
@@ -79,7 +79,7 @@ sequenceDiagram
     V->>A: Envio da senha WPA/WPA2 via POST
     A->>A: Registro das credenciais
 
-📝 5. Análise Técnica
+    5. Análise Técnica
 📡 Estágio 1: DEAUTH Attack
 
 O Wifiphisher envia pacotes de desautenticação (DEAUTH) para a vítima, forçando-a a se desconectar da rede legítima.
@@ -98,17 +98,14 @@ Insira sua chave WPA para continuar.”
 A credencial enviada aparece no terminal como:
 
 POST request from 10.0.0.32 with wfphshr-wpa-password=teste
-
-
 O valor “teste” foi definido durante o experimento para validação.
-
 📸 6. Evidências
 6.1 Seleção do SSID alvo
-<div align="center"> <img src="images/Imagem do WhatsApp de 2025-11-19 à(s) 17.10.40_14280c74.jpg" width="650"> </div>
+<div align="center"> <img src="images/scan.png" width="650"> </div>
 6.2 Escolha do cenário de phishing
-<div align="center"> <img src="images/Imagem do WhatsApp de 2025-11-19 à(s) 17.10.48_34defdd0.jpg" width="650"> </div>
+<div align="center"> <img src="images/phishing.png" width="650"> </div>
 6.3 Captura da senha enviada pela vítima
-<div align="center"> <img src="images/Imagem do WhatsApp de 2025-11-19 à(s) 17.10.56_b26b0789.jpg" width="650"> </div>
+<div align="center"> <img src="images/victim.png" width="650"> </div>
 📊 7. Classificação dos Dados Comprometidos
 Dado Capturado	Tipo	Risco	Impacto Técnico
 Senha WPA/WPA2	Credencial	#Crítico#	Permite acesso total ao roteador e à rede da vítima
@@ -190,9 +187,6 @@ Monitoramento de redes contra APs maliciosos
 
 👨‍💻 Desenvolvido por:
 Guilherme Ferreira
-joao pedro 
-danyel 
-gabriel 
 Trabalho apresentado ao curso de Sistemas de Informação — Novembro/2025
 
 </div>
